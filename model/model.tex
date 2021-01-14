@@ -1,0 +1,393 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+%这是导言区，可用来引入各种宏包
+\usepackage{amsmath} % 这是用于数学公式编辑的宏包
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{lastpage} % 获得总页数
+\usepackage{array} % 引入宏包，可对整列单元格进行修改
+\usepackage{booktabs} % 三线表
+\usepackage{hyperref} %生成可链接的目录
+%生成可连接书签
+%\usepackage[breaklinks,colorlinks,linkcolor=black,citecolor=black,urlcolor=black,bookmarks=true]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}%取消目录红色边框
+
+%\raggedright % 防止右边越界
+% 首行缩进
+\usepackage{indentfirst}
+\setlength{\parindent}{2em} % 缩进两格
+
+\usepackage{amsmath} % 这是用于数学公式编辑的宏包
+\usepackage{amsthm}
+
+% 插入图片的宏包
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{{pic/}} % 在于.tex同级的目录下创建名为pic的文件夹
+
+% 自定义页眉页脚
+\pagestyle{fancy}
+\lhead{\includegraphics[scale=0.12]{xiamen}}
+%\chead{这是我的专用页眉}
+\chead{\includegraphics[scale=0.11]{xiaoxun}}
+%\rhead{\bfseries 右边页眉}
+\rhead{\includegraphics[scale=0.1]{xueyuan}}
+% \lfoot{页脚左边} \rfoot{右边页脚}
+\cfoot{\thepage}
+\usepackage{ulem}
+\usepackage{CJKfntef}
+
+\usepackage{tocloft}
+\newcommand\mydot[1]{\scalebox{#1}{.}}
+\renewcommand\cftdot{\mydot{0.8}} % change the size of dots
+\renewcommand\cftdotsep{3} % change the space between dots
+
+\usepackage{listings} % 用于插入代码块的宏包
+\lstset{language=Matlab}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{lipsum}
+% 自定义代码颜色
+\usepackage{ulem}
+\usepackage{minted}
+
+\usepackage{color}
+\usepackage{multirow}
+
+\usepackage[final]{pdfpages}
+
+\usepackage{lipsum}
+\renewcommand{\contentsname}{\centerline{目录}}
+
+\usepackage{setspace}%使用间距宏包
+
+\usepackage{titlesec}
+
+%time new romans字体
+%\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext, newtxmath}
+
+\usepackage[none]{hyphenat}
+
+%%%%%代码颜色的设置===========
+\newcommand{\Console}{Console}
+%%%%%定义一些自用的颜色深度==========
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+%%% 设置显示代码颜色===========
+\usepackage{setspace}%使用间距宏包
+\lstset{
+	backgroundcolor=\color{white},  % 代码块背景颜色
+	basicstyle=\footnotesize, % 用于代码的前端显示
+	breakatwhitespace=false, % 若设置中断则发现在空白区
+	breaklines=true,  % 设置自动断行
+	captionpos=bl,  % 设置标题位置为底端显示
+	commentstyle=\color{mygreen},  % 注释风格颜色
+	deletekeywords={...},  % 用于删除某关键字
+	escapeinside={\%*}{*)},
+	extendedchars=true,
+	frame=single,  % 在代码块区域增加边框
+	keepspaces=true,
+	keywordstyle=\color{blue}, % 关键词的颜色
+	%language=Python,   % 要在代码块插入的代码类型
+	morekeywords={*,...},  % if you want to add more keywords to the set
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\tiny\color{mygray},% 行号字体的颜色
+	rulecolor=\color{black},
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	stepnumber=1, % the step between two line-numbers
+	stringstyle=\color{red}, % 双引号内的颜色
+	tabsize=2,
+}
+
+%%封面可放在导言区
+\title{\textbf{题目}} %%标题
+\author{\textbf{摘要}}
+\date{}
+
+%\usepackage{abstract} %%一种有用的摘要宏包
+%\renewcommand{\abstractname}{} % 取消原来居中的“摘要”
+% 正文区
+% 开始操作
+\begin{document}
+	\thispagestyle{empty}
+	\includepdf{001.pdf} 
+	\thispagestyle{empty}
+	\newpage
+	
+	\maketitle %此处生成封面
+	\thispagestyle{empty}%该页取消页码
+	\vspace{-1.5em}
+\begin{spacing}{1.2}
+	\sloppy{}%%该命令降低间距精度,防止英文右边越界等
+	本文是一个对XX的研究模型。通过对XX、XX和XX的研究，分别建立了XX、XX和XX模型。
+\end{spacing}
+\begin{spacing}{1.2}
+	\sloppy{}
+	首先，本文针对问题一的XX和XX问题，对影子定位方程进行了简化，利用XX知识建立了XX模型。得到XX参数之间的解析关系式。
+\end{spacing}
+\begin{spacing}{1.2}
+	\sloppy{}
+	其次，针对问题二的XX的变化问题，利用XX建立半搜索模型。通过arima方法，得到XX方程，利用MATLAB得到XX结果。
+\end{spacing}
+\begin{spacing}{1.2}
+	\sloppy{}
+	最后，针对问题三的XX问题，利用XX建立XX模型。通过arima方法，得到XX方程，利用MATLAB得到XX结果。
+\end{spacing}
+\begin{spacing}{1.2}
+	\sloppy{}
+	本文的创新之处在于：建立了XX，运用XX，完成了XX的求解，计算结果与数据吻合度高，XX等等。
+\end{spacing}
+
+\textbf{关键字：}参宿四；\LaTeX；关键词3；关键词4；关键词5
+\newpage
+\setcounter{page}{1}%从该页开始为1编号
+
+%设置section{}居中
+\titleformat{\section}{\centering\large\bfseries}{}{}{}
+
+%%%一、问题重述
+\section*{一、问题重述}
+
+\subsection*{1.问题背景}
+\begin{spacing}{1.2}
+	XXX
+\end{spacing}
+\begin{spacing}{1.2}
+	XXX
+\end{spacing}
+\begin{spacing}{1.2}
+	XXXX
+\end{spacing}\vspace{-1.0em}
+\subsection*{2.拟解决的问题}
+\noindent 问题1：若给出每个节点的经纬度（见附件1），请考虑当只派出一个移动充电器时，如何规划移动充电器的充电路线才能最小化移动充电器在路上的能量消耗。 \vspace{+0.3em}\\% \ \\
+问题2：若给出每个节点的经纬度、每个节点的能量消耗速率（见附件2），并假设传感器的电量只有在高于f(mA)时才能正常工作，移动充电器的移动速度为v(m/s)、移动充电器的充电速率为r（mA/s），在只派出一个移动充电器的情况下，若采用问题1）规划出来的充电路线，每个传感器的电池的容量应至少是多大才能保证整个系统一直正常运行（即系统中每个传感器的电量都不会低于f（mA））？ \vspace{+0.3em}\\% \ \\
+问题3：若给出每个节点的经纬度、每个节点的能量消耗速率（同见附件2），并假设传感器的电量只有在高于f(mA)时才能正常工作，移动充电器的移动速度为v(m/s)、移动充电器的充电速率为r（mA/s），但为了提高充电效率，同时派出4个移动充电器进行充电，在这种情况下应该如何规划移动充电器的充电路线以最小化所有移动充电器在路上的总的能量消耗？每个传感器的电池的容量应至少是多大才能保证整个系统一直正常运行？
+\section*{二、问题分析}
+问题的研究对象是求解可能的直杆
+\subsection*{2.1\ 问题一的分析}
+该问要求在只派出一个
+\vspace{-1.0em}
+\subsection*{2.2\ 问题二的分析}
+该问在第一问的基础上增加了的
+\vspace{-1.0em}
+\subsection*{2.3\ 问题三的分析}
+电器时在路上的
+\vspace{-0.5em}
+%%%三、模型假设
+\section*{三、模型假设}
+\begin{spacing}{1.0}
+	\begin{enumerate}
+		\item[1)] 假设1
+		\item[2)] 假设2
+		\item[3)] 第一圈初始时刻各传感器的电量为$Q$;
+		\item[4)] 假设4
+		\item[5)] 假设5
+		\item[6)] 假设6
+	\end{enumerate}
+\end{spacing}
+\vspace{-0.5em}
+
+%%%四、定义与符号说明
+\section*{四、定义与符号说明}
+\subsection*{4.1\ 符号说明}
+\vspace{-0.5em}
+\begin{table}[htbp!]
+	\centering
+        \caption*{\textbf{表1\ 主要的符号定义及说明}} 
+	\begin{tabular}[t]{ccc}
+		\toprule
+                \textbf{符号} & \textbf{说明}  & \textbf{单位}\\
+		%\multicolumn{3}{c}{\textbf{\emph{主要的符号定义及说明}}} \\
+		\midrule
+		%\textbf{符号} & \textbf{说明}  & \textbf{单位} \\
+		$\alpha_{i}$ & 地点A的经度 & 度/° \\
+		$\beta_{i}$ & 地点A的纬度 & 度/° \\
+		$\pi_{i}$ & 各节点的编号$(i=0,1,\cdots,29,30)$,其中$\pi_{0}=\pi_{30}$数据中心 & -- \\
+		% &  &  \\
+		\bottomrule
+	\end{tabular}
+	%\caption*{测试环境}
+\end{table}\vspace{-1.0em}
+\subsection*{4.2\ 名词解释}
+\begin{spacing}{1.2}
+	名词1：
+\end{spacing}
+\begin{spacing}{1.2}
+	名词2：
+\end{spacing}
+\vspace{-0.5em}
+%%%五、模型的建立与求解
+\section*{五、模型的建立与求解}
+\subsection*{5.1\ 模型一:基于XX的模型——问题一的求解}
+\subsubsection*{5.1.1\ 建模准备——XX公式}
+
+\subsubsection*{5.1.2\ 对于XX公式}
+
+\paragraph*{\textbf{(1)纬度与日数一定，影子长度随时间变化规律}}\ \\\vspace{-1.0em}
+\begin{spacing}{1.0}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊$a^{2}+b^{2}=c^{2}$啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}\vspace{-1.0em}
+\paragraph*{\textbf{(2)纬度与日数一定，影子长度随时间变化规律}}\ \\\vspace{-1.0em}
+\begin{spacing}{1.0}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}\vspace{-1.0em}
+\paragraph*{\textbf{(3)纬度与日数一定，影子长度随时间变化规律}}\ \\\vspace{-1.0em}
+\begin{spacing}{1.0}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}\vspace{-1.0em}
+\subsubsection*{5.1.3\ 问题一的求解——模拟退火算法}
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
+\end{spacing}
+\begin{figure}[htbp] % latex中的table\figure环境视为一种浮动体
+	% h:当前位置 t:顶部 b:底部 p:单独成页
+	\centering\includegraphics[scale=0.34]{sz001} % 插入图片
+	% [scale=*]为可选参数，用于放缩图片的大小
+	\caption*{图5.1\ XXXXX}
+\end{figure}
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
+\end{spacing}
+\subsubsection*{5.1.4\ 模型检验与结果分析}
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
+\end{spacing}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.25]{sz002}\quad
+	%\caption*{Latex}
+	\includegraphics[scale=0.25]{sz003}\quad
+	%\caption*{微分的几何意义}
+	
+	\caption*{图5.2\ XXXX}%\label{p1}
+\end{figure}
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}%\vspace{-1.0em}间距太大可用此命令控制
+\vspace{+0.5em}%可用此增加段落间距
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}
+\begin{figure}[htbp] % latex中的table\figure环境视为一种浮动体
+	% h:当前位置 t:顶部 b:底部 p:单独成页
+	\centering\includegraphics[scale=0.34]{sz004} % 插入图片
+	% [scale=*]为可选参数，用于放缩图片的大小
+	\caption*{图5.3\ XXX}
+\end{figure}
+
+\subsection*{5.2\ 模型二:基于XX的模型——问题二的求解}
+\subsubsection*{5.2.1\ 建模准备——XX公式}
+\begin{spacing}{1.0}
+	\sloppy{}
+	由第一问求解得到的较优路径
+\end{spacing}
+\begin{figure}[htbp] % latex中的table\figure环境视为一种浮动体
+	% h:当前位置 t:顶部 b:底部 p:单独成页
+	\centering\includegraphics[scale=0.34]{szQ2} % 插入图片
+	% [scale=*]为可选参数，用于放缩图片的大小
+	\caption*{图5.2\ 全国疫情变换情况}
+\end{figure}
+\begin{spacing}{1.0}
+	\sloppy{}
+	啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+\end{spacing}\vspace{-0.5em}
+\begin{equation}
+	\mbox{方程}=
+	\begin{cases}
+	\mbox{对于移动充电器的状态}\begin{cases}
+	\sum_{k=0}^{29}P_{k}=1\\
+	P_{k}=0\ or\ 1,k=0,1,\cdots,29\end{cases}\nonumber\\
+	T=t_{30}=t_{29}+\Delta t+{29}+\frac{d_{29}}{v'}\\
+	\mbox{第一圈}\begin{cases}
+	T_{1}=\frac{d_{1}}{v'}\\
+	q_{\mbox{损}1}=\begin{cases}
+	C_{1}'\cdots t,t<T_{1}\\
+	r\Delta t_{1}-C_{1}'(t+\Delta t_{1}),T_{1}\leq T_{1}+\Delta t_{1}\\
+	C_{1}'(t-T_{1}\Delta t_{1})                       
+	\end{cases}\nonumber\end{cases}\nonumber\\
+	P_{4}=1\mbox{时},\begin{cases}
+	1:Q-C_{1}'(\sum_{i=2}^{4}(T_{i}+\Delta t_{i}))\geq f\\
+	3:Q-C_{3}'(T_{4}+\Delta t_{4})\geq f\\
+	\ldots\\
+	29:Q-C_{29}'(\sum_{i=1}^{29}(T_{i}+\Delta t_{i}))\geq f
+	\end{cases}\nonumber\\
+	\cdots
+	\end{cases}
+\end{equation}
+
+\subsubsection*{5.2.2\ 数据的处理}
+
+
+\subsubsection*{5.2.3\ 问题二的求解——遍历算法}
+
+
+\subsubsection*{5.2.4\ 模型检验与结果分析法}
+\begin{figure}[htbp] % latex中的table\figure环境视为一种浮动体
+	% h:当前位置 t:顶部 b:底部 p:单独成页
+	\centering\includegraphics[scale=0.34]{sz005} % 插入图片
+	% [scale=*]为可选参数，用于放缩图片的大小
+	\caption*{图5.3\ XXXXX}
+\end{figure}
+
+
+\subsection*{5.3\ 模型三:基于XX的模型——问题三的求解}
+\subsubsection*{5.3.1\ 建模准备——XX公式}
+\begin{figure}[htbp] % latex中的table\figure环境视为一种浮动体
+	% h:当前位置 t:顶部 b:底部 p:单独成页
+	\centering\includegraphics[scale=0.36]{sz006} % 插入图片
+	% [scale=*]为可选参数，用于放缩图片的大小
+	\caption*{图5.1\ XXXXX}
+\end{figure}
+\subsubsection*{5.3.2\ 数据的处理}
+\subsubsection*{5.3.3\ 问题三的求解——基于XX算法}
+\subsubsection*{5.3.4\ 模型检验与结果分析}
+
+\section*{六、模型评价与推广}
+\subsection*{6.1\ 模型的评价}
+\subsubsection*{6.1.1\ 模型的优点}
+\subsubsection*{6.1.2\ 模型的缺点与不足}
+\subsection*{6.2\ 模型的改进}
+
+\newpage
+\centering
+% 一种较常规的参考文献格式
+% 可以交叉引用
+% 还是建议bib
+\begin{thebibliography}{99}
+	\bibitem{article1}参考文献1: references1.references1.references1.references1.references1.
+	\bibitem{article2}参考文献2: references2.references2.references2.references2.references2.
+	\bibitem{article3}参考文献3: references3.references3.references3.references3.references3.
+\end{thebibliography}
+
+\newpage
+
+
+\section*{附录}
+\begin{flushleft}
+\subsection*{附录1}
+{\small
+clear
+clc
+}
+\end{flushleft}
+
+\begin{flushleft}
+\subsection*{附录2}	
+\end{flushleft}
+\lstinputlisting[language=matlab,frame=single,caption=XXX]{richards.m}
+\end{document}
